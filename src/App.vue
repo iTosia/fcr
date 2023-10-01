@@ -1,9 +1,11 @@
 <template>
-  <section data-bs-version="5.1" class="menu menu3 cid-sFAA5oUu2Y" once="menu" id="menu3-1">
+  <section class="menu menu3 cid-sFAA5oUu2Y" id="menu3-1">
     <nav class="navbar navbar-dropdown navbar-expand-lg">
       <div class="container">
         <div class="navbar-brand">
-          <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-5" href="#" target="_blank">FCR</a></span>
+          <span class="navbar-caption-wrap">
+            <a class="navbar-caption text-primary display-5" href="#" target="_blank">FCR</a>
+          </span>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <div class="hamburger">
@@ -14,10 +16,20 @@
           </div>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-primary display-7" href="#top">Home&nbsp;</a></li>
-            <li class="nav-item"><a class="nav-link link text-primary display-7" href="#" target="_blank">Features</a></li>
-            <li class="nav-item"><a class="nav-link link text-primary display-7" href="#" target="_blank">Shop</a>
-            </li><li class="nav-item"><a class="nav-link link text-primary display-7" href="#" target="_blank">About</a></li></ul>
+          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+            <li class="nav-item">
+              <a class="nav-link link text-primary display-7" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link text-primary display-7" href="#" target="_blank">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link text-primary display-7" href="#" target="_blank">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>About</a>
+            </li>
+          </ul>
           <div class="icons-menu">
             <a class="iconfont-wrapper" href="#" target="_blank">
               <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
@@ -35,20 +47,23 @@
     </nav>
   </section>
 
-  <section data-bs-version="5.1" class="header1 cid-sFCAOqBTxa" id="header1-i">
+  <section class="header1 cid-sFCAOqBTxa" id="header1-i">
     <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(250, 250, 250);"></div>
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
           <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Family Cosmetic's Recipe</strong></h1>
           <p class="mbr-text mbr-fonts-style display-7"><strong>Сімейний бренд косметики для волосся і не тільки. </strong><br><strong>Інновації. Екологічність. Турбота.</strong></p>
-          <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="index.html#content4-6">Shop Now</a> <a class="btn btn-primary-outline display-4" href="index.html#features16-9">Read More</a></div>
+          <div class="mbr-section-btn mt-3">
+            <a class="btn btn-primary display-4" href="#">Shop Now</a>
+            <a class="btn btn-primary-outline display-4" href="#about" v-smooth-scroll>Read More</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section data-bs-version="5.1" class="content4 cid-sFADQQfNeA" id="content4-6">
+  <section class="content4 cid-sFADQQfNeA" id="content4-6">
     <div class="container">
       <div class="row justify-content-center">
         <div class="title col-md-12 col-lg-10">
@@ -59,7 +74,7 @@
     </div>
   </section>
 
-  <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" id="features9-4">
+  <section class="features8 cid-sFADMOwrhN" id="features9-4">
     <div class="container">
       <div class="card">
         <div class="card-wrapper">
@@ -116,7 +131,7 @@
     </div>
   </section>
 
-  <section data-bs-version="5.1" class="features15 cid-sFANq99njx" id="features16-9">
+  <section class="features15 cid-sFANq99njx" id="about">
     <div class="container">
       <div class="content-wrapper">
         <div class="row align-items-center">
@@ -137,7 +152,7 @@
     </div>
   </section>
 
-  <section data-bs-version="5.1" class="clients2 cid-sFAOcdRzJX" id="clients2-b">
+  <section class="clients2 cid-sFAOcdRzJX" id="clients2-b">
     <div class="container">
       <div class="row justify-content-center">
         <div class="card col-12 col-md-6 col-lg-4">
@@ -187,7 +202,7 @@
     </div>
   </section>
 
-  <section data-bs-version="5.1" class="contacts3 map1 cid-sFAOgbarYq" id="contacts3-c">
+  <section class="contacts3 map1 cid-sFAOgbarYq" id="contacts3-c">
     <div class="container">
       <div class="mbr-section-head">
         <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Як зв'язатися</strong></h3>
@@ -222,21 +237,38 @@
           </div>
         </div>
         <div class="map-wrapper col-12 col-md-6">
-          <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6045.3003145248895!2d-73.9884657!3d40.7477229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ac1f1b85%3A0x7e33d1c0e7af3be4!2zMzUwIDV0aCBBdmUsIE5ldyBZb3JrLCBOWSAxMDExOCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1689597362021!5m2!1sen!2sen" allowfullscreen=""></iframe></div>
+          <div class="google-map">
+            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6045.3003145248895!2d-73.9884657!3d40.7477229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ac1f1b85%3A0x7e33d1c0e7af3be4!2zMzUwIDV0aCBBdmUsIE5ldyBZb3JrLCBOWSAxMDExOCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1689597362021!5m2!1sen!2sen" allowfullscreen=""></iframe>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section data-bs-version="5.1" class="footer3 cid-sFAOjz8nX7" once="footers" id="footer3-d">
+  <section class="footer3 cid-sFAOjz8nX7" id="footer3-d">
     <div class="container">
       <div class="media-container-row align-center mbr-white">
         <div class="row row-links">
           <ul class="foot-menu">
-            <li class="foot-menu-item mbr-fonts-style display-7"><a href="#top" class="text-white">Home</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#content4-5" class="text-white">Features</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#content4-6" class="text-white">Shop</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#features16-9" class="text-white">About</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#contacts3-c" class="text-white">Contacts</a></li></ul>
+            <li class="foot-menu-item mbr-fonts-style display-7">
+              <a href="#" target="_blank" class="text-white">Home</a>
+            </li>
+            <li class="foot-menu-item mbr-fonts-style display-7">
+              <a href="#" target="_blank" class="text-white">Features</a>
+            </li>
+            <li class="foot-menu-item mbr-fonts-style display-7">
+              <a href="#" target="_blank" class="text-white">Shop</a>
+            </li>
+            <li class="foot-menu-item mbr-fonts-style display-7">
+              <a href="#" target="_blank" class="text-white">About</a>
+            </li>
+            <li class="foot-menu-item mbr-fonts-style display-7">
+              <a href="#" target="_blank" class="text-white">Contacts</a>
+            </li>
+          </ul>
         </div>
         <div class="row social-row">
-          <div class="social-list align-right pb-2">
+          <div class="social-list align-right py-2">
             <div class="soc-item">
               <a href="#" target="_blank">
                 <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
@@ -273,16 +305,19 @@
     </div>
   </section>
 
-  <section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;">
-    <a href="#" target="_blank" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;">
-      <img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
-    </a>
-    <p style="margin: 0;text-align: center;" class="display-7">&#8204;</p>
-    <a style="z-index:1" href="#" target="_blank">Drag & Drop Website Builder</a>
-  </section>
 </template>
 
 <script setup>
+import { inject, ref } from 'vue'
+const myEl = ref(null)
+const smoothScroll = inject('smoothScroll')
+const scrollToMyEl = () => {
+  smoothScroll({
+    scrollTo: myEl.value,
+    duration: 100,
+    offset: 0,
+  })
+}
 </script>
 
 <style>

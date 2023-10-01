@@ -66,7 +66,7 @@
           <div class="row align-items-center">
             <div class="col-12 col-md-4">
               <div class="image-wrapper">
-                <img src="src/assets/images/cream150-2.jpg" alt="Mobirise Website Builder">
+                <img src="@/assets/images/cream150-2.jpg" alt="Mobirise Website Builder">
               </div>
             </div>
             <div class="col-12 col-md">
@@ -92,7 +92,7 @@
           <div class="row align-items-center">
             <div class="col-12 col-md-4">
               <div class="image-wrapper">
-                <img src="src/assets/images/cream150-3.jpg" alt="Mobirise Website Builder">
+                <img src="@/assets/images/cream150-3.jpg" alt="Mobirise Website Builder">
               </div>
             </div>
             <div class="col-12 col-md">
@@ -129,7 +129,7 @@
           </div>
           <div class="col-12 col-lg-6">
             <div class="image-wrapper">
-              <img src="src/assets/images/mbr-10.jpg" alt="Mobirise Website Builder">
+              <img src="@/assets/images/mbr-10.jpg" alt="Mobirise Website Builder">
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@
         <div class="card col-12 col-md-6 col-lg-4">
           <div class="card-wrapper">
             <div class="img-wrapper">
-              <img src="src/assets/images/1.png" alt="Mobirise Website Builder">
+              <img src="@/assets/images/1.png" alt="Mobirise Website Builder">
             </div>
             <div class="card-box align-center">
 
@@ -159,7 +159,7 @@
         <div class="card col-12 col-md-6 col-lg-4">
           <div class="card-wrapper">
             <div class="img-wrapper">
-              <img src="src/assets/images/2.png" alt="Mobirise Website Builder">
+              <img src="@/assets/images/2.png" alt="Mobirise Website Builder">
             </div>
             <div class="card-box align-center">
 
@@ -173,7 +173,7 @@
         <div class="card col-12 col-md-6 col-lg-4">
           <div class="card-wrapper">
             <div class="img-wrapper">
-              <img src="src/assets/images/3.png" alt="Mobirise Website Builder">
+              <img src="@/assets/images/3.png" alt="Mobirise Website Builder">
             </div>
             <div class="card-box align-center">
               <h5 class="card-title mbr-fonts-style mb-3 display-5"><strong>Our Partner</strong></h5>

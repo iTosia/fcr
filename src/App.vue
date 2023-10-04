@@ -1,13 +1,13 @@
 <template>
   <section class="menu menu3 cid-sFAA5oUu2Y" id="menu3-1">
-    <nav class="navbar navbar-dropdown navbar-expand-lg">
+    <nav class="navbar navbar-dropdown navbar-expand-lg" :class="{ 'opened': menuActive }">
       <div class="container">
         <div class="navbar-brand">
           <span class="navbar-caption-wrap">
             <a class="navbar-caption text-primary display-5" href="#" target="_blank">FCR</a>
           </span>
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button @click.prevent="menuToggle()" class="navbar-toggler" :class="{ 'collapsed': menuActive }" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <div class="hamburger">
             <span></span>
             <span></span>
@@ -15,7 +15,7 @@
             <span></span>
           </div>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" :class="{ 'show': menuActive }" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
             <li class="nav-item">
               <a class="nav-link link text-primary display-7" href="#">Home</a>
@@ -318,7 +318,7 @@ const scrollToMyEl = () => {
     offset: 0,
   })
 }
-</script>
 
-<style>
-</style>
+const menuActive = ref(false)
+const menuToggle = () => menuActive.value = !menuActive.value
+</script>

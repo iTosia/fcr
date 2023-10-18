@@ -1,0 +1,14 @@
+{
+  "menu_section": {
+    "title": "ФЦР",
+    "items": {
+      "home": "Головна",
+      "features": "Можливості",
+      "shop": "Магазин",
+      "about": "Про нас"
+    },
+    "buttons": {
+      "switch_lang": "Перекласти мову"
+    }
+  }
+}

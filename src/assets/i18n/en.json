@@ -1,0 +1,14 @@
+{
+  "menu_section": {
+    "title": "FCR",
+    "items": {
+      "home": "Home",
+      "features": "Features",
+      "shop": "Shop",
+      "about": "About"
+    },
+    "buttons": {
+      "switch_lang": "Switch language"
+    }
+  }
+}

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="navbar-brand">
           <span class="navbar-caption-wrap">
-            <a class="navbar-caption text-primary display-5" href="#" target="_blank">FCR</a>
+            <a class="navbar-caption text-primary display-5" href="#" target="_blank">{{ t('menu_section.title') }}</a>
           </span>
         </div>
         <button @click.prevent="menuToggle()" class="navbar-toggler" :class="{ 'collapsed': menuActive }" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,16 +18,16 @@
         <div class="collapse navbar-collapse" :class="{ 'show': menuActive }" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
             <li class="nav-item">
-              <a class="nav-link link text-primary display-7" href="#">Home</a>
+              <a class="nav-link link text-primary display-7" href="#">{{ t('menu_section.items.home') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link text-primary display-7" href="#" target="_blank">Features</a>
+              <a class="nav-link link text-primary display-7" href="#" target="_blank">{{ t('menu_section.items.features') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link text-primary display-7" href="#" target="_blank">Shop</a>
+              <a class="nav-link link text-primary display-7" href="#" target="_blank">{{ t('menu_section.items.shop') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>About</a>
+              <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>{{ t('menu_section.items.about') }}</a>
             </li>
           </ul>
           <div class="icons-menu">
@@ -41,7 +41,9 @@
               <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
             </a>
           </div>
-          <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="#" target="_blank">Shop Now</a></div>
+          <div class="navbar-buttons mbr-section-btn">
+            <button class="btn btn-primary display-4" @click.prevent="switchLang()">{{ t('menu_section.buttons.switch_lang') }}</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -309,6 +311,15 @@
 
 <script setup>
 import { inject, ref } from 'vue'
+import { useI18n } from "vue-i18n"
+
+const { t, locale } = useI18n({useScope: 'global'})
+
+const switchLang = () => {
+  locale.value === 'en' ? locale.value = 'ua' : locale.value = 'en'
+  localStorage.setItem('language', locale.value)
+}
+
 const myEl = ref(null)
 const smoothScroll = inject('smoothScroll')
 const scrollToMyEl = () => {

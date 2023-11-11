@@ -21,28 +21,17 @@
               <a class="nav-link link text-primary display-7" href="#">{{ t('menu_section.items.home') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link text-primary display-7" href="#" target="_blank">{{ t('menu_section.items.features') }}</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link link text-primary display-7" href="#" target="_blank">{{ t('menu_section.items.shop') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>{{ t('menu_section.items.about') }}</a>
             </li>
           </ul>
-          <div class="icons-menu">
-            <a class="iconfont-wrapper" href="#" target="_blank">
-              <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
-            </a>
-            <a class="iconfont-wrapper" href="#" target="_blank">
-              <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
-            </a>
-            <a class="iconfont-wrapper" href="#" target="_blank">
-              <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
-            </a>
-          </div>
-          <div class="navbar-buttons mbr-section-btn">
-            <button class="btn btn-primary display-4" @click.prevent="switchLang()">{{ t('menu_section.buttons.switch_lang') }}</button>
+          <div class="navbar-buttons language-switcher">
+            <p><a @click.prevent="switchLang('ua')" :class="{ 'active-language' : isUaLangActive }">UA</a></p>
+            <span>|</span>
+            <p><a @click.prevent="switchLang('en')" :class="{ 'active-language' : isEnLangActive }">EN</a></p>
+<!--            <button class="btn btn-primary display-4" @click.prevent="switchLang()">{{ t('menu_section.buttons.switch_lang') }}</button>-->
           </div>
         </div>
       </div>
@@ -310,15 +299,18 @@
 </template>
 
 <script setup>
-import { inject, ref } from 'vue'
+import { inject, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n"
 
 const { t, locale } = useI18n({useScope: 'global'})
 
-const switchLang = () => {
-  locale.value === 'en' ? locale.value = 'ua' : locale.value = 'en'
+const switchLang = (language) => {
+  locale.value = language
   localStorage.setItem('language', locale.value)
 }
+
+const isUaLangActive = computed(() => locale.value === 'ua')
+const isEnLangActive = computed(() => locale.value === 'en')
 
 const myEl = ref(null)
 const smoothScroll = inject('smoothScroll')

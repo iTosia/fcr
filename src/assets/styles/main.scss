@@ -7,3 +7,35 @@
 @import 'socicon-styles';
 @import 'theme-style';
 @import 'mbr-additional';
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p, span {
+    color: #05386b;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  span {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  p {
+    margin-bottom: 0;
+
+    a {
+      padding: 0.4rem;
+      opacity: 0.5;
+
+      &.active-language {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+  }
+}

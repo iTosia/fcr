@@ -45,11 +45,14 @@
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
-          <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Family Cosmetic's Recipe</strong></h1>
-          <p class="mbr-text mbr-fonts-style display-7"><strong>Сімейний бренд косметики для волосся і не тільки. </strong><br><strong>Інновації. Екологічність. Турбота.</strong></p>
+          <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>{{ t('main_screen.title') }}</strong></h1>
+          <p class="mbr-text mbr-fonts-style display-7">
+            <strong>{{ t('main_screen.items.undertitle_1') }} </strong>
+            <br>
+            <strong>{{ t('main_screen.items.undertitle_2') }}</strong>
+          </p>
           <div class="mbr-section-btn mt-3">
-            <a class="btn btn-primary display-4" href="#">Shop Now</a>
-            <a class="btn btn-primary-outline display-4" href="#about" v-smooth-scroll>Read More</a>
+            <a class="btn btn-primary display-4">{{ t('main_screen.items.button') }}</a>
           </div>
         </div>
       </div>

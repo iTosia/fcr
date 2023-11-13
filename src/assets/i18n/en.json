@@ -7,5 +7,13 @@
       "shop": "Shop",
       "about": "About"
     }
+  },
+  "main_screen": {
+    "title": "Family Cosmetic's Recipe",
+    "items": {
+      "undertitle_1": "Family brand of cosmetics for hair and not only.",
+      "undertitle_2": "Innovations. Environmental friendliness. Caring.",
+      "button": "Shop Now"
+    }
   }
 }

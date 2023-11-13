@@ -8,34 +8,70 @@
 @import 'theme-style';
 @import 'mbr-additional';
 
-.language-switcher {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header-logo {
+  cursor: pointer;
+  font-family: "SignPainter", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #05386b;
+}
 
-  p, span {
-    color: #05386b;
-    font-family: "Inter", sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.5;
+.language {
+  &-switcher {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    background-color: #05386b;
+    color: #fff;
   }
 
-  span {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+  &-selected {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__arrow {
+      font-size: 0.5rem;
+      margin-left: 4px;
+    }
   }
 
-  p {
-    margin-bottom: 0;
+  &-dropdown {
+    padding: 8px 12px;
 
-    a {
-      padding: 0.4rem;
-      opacity: 0.5;
+    &__list {
+      position: absolute;
+      left: 0;
+      top: 44px;
+      width: 100%;
+      display: none;
 
-      &.active-language {
-        opacity: 1;
-        text-decoration: underline;
+      &.opened {
+        display: block;
       }
     }
+
+    &__item {
+      background-color: #fff;
+      color: #05386b;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 5px;
+      transition: 0.1s ease-in;
+
+      &:hover {
+        background-color: #05386b;
+        color: #fff;
+        transition: 0.1s ease-in;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .language-switcher {
+    margin-top: 10px;
   }
 }

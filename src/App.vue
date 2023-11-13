@@ -4,7 +4,7 @@
       <div class="container">
         <div class="navbar-brand">
           <span class="navbar-caption-wrap">
-            <a class="navbar-caption text-primary display-5" href="#" target="_blank">{{ t('menu_section.title') }}</a>
+            <a class="header-logo">{{ t('menu_section.title') }}</a>
           </span>
         </div>
         <button @click.prevent="menuToggle()" class="navbar-toggler" :class="{ 'collapsed': menuActive }" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,11 +27,13 @@
               <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>{{ t('menu_section.items.about') }}</a>
             </li>
           </ul>
-          <div class="navbar-buttons language-switcher">
-            <p><a @click.prevent="switchLang('ua')" :class="{ 'active-language' : isUaLangActive }">UA</a></p>
-            <span>|</span>
-            <p><a @click.prevent="switchLang('en')" :class="{ 'active-language' : isEnLangActive }">EN</a></p>
-<!--            <button class="btn btn-primary display-4" @click.prevent="switchLang()">{{ t('menu_section.buttons.switch_lang') }}</button>-->
+          <div class="language-switcher display-7" @click.prevent="toggleLanguageDropdown()">
+            <div class="language-dropdown">
+              <div class="language-selected">{{ selectedLanguage }}<span class="language-selected__arrow">&#9660;</span></div>
+              <div class="language-dropdown__list" :class="{ 'opened' : isDropdownOpen }">
+                <div class="language-dropdown__item" v-for="(language, index) in languagesList" :key="index" @click.stop="switchLang(language)">{{ language }}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -301,16 +303,22 @@
 <script setup>
 import { inject, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n"
+import { languages } from "@/assets/i18n"
 
 const { t, locale } = useI18n({useScope: 'global'})
+
+const languagesList = ref([...Object.keys(languages)])
+let isDropdownOpen = ref(false)
+
+const toggleLanguageDropdown = () => isDropdownOpen.value = !isDropdownOpen.value
 
 const switchLang = (language) => {
   locale.value = language
   localStorage.setItem('language', locale.value)
+  isDropdownOpen.value = false
 }
 
-const isUaLangActive = computed(() => locale.value === 'ua')
-const isEnLangActive = computed(() => locale.value === 'en')
+const selectedLanguage = computed(() => locale.value)
 
 const myEl = ref(null)
 const smoothScroll = inject('smoothScroll')

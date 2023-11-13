@@ -863,9 +863,6 @@ a {
   .cid-sFAA5oUu2Y .navbar .navbar-logo img {
     height: 3rem !important;
   }
-  .cid-sFAA5oUu2Y .navbar ul.navbar-nav li {
-    margin: auto;
-  }
   .cid-sFAA5oUu2Y .navbar .dropdown-menu .dropdown-item {
     padding: 0.25rem 1.5rem !important;
     text-align: center;
@@ -937,6 +934,7 @@ a {
 }
 .cid-sFAA5oUu2Y ul.navbar-nav {
   flex-wrap: wrap;
+  width: 100%;
 }
 .cid-sFAA5oUu2Y .navbar-buttons {
   text-align: center;

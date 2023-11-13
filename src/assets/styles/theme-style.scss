@@ -543,12 +543,20 @@ nav .mbr-section-btn {
     max-height: 93.5vh;
   }
   .menu .navbar-collapse.show {
-    overflow: auto;
+    //overflow: auto;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+
+    .language-dropdown__list {
+      top: 40px;
+    }
   }
 }
 @media (min-width: 992px) {
   .menu .navbar-nav.nav-dropdown {
     display: -webkit-flex;
+    width: unset;
   }
   .menu .navbar-toggleable-sm .navbar-collapse {
     display: -webkit-flex !important;

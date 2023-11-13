@@ -23,6 +23,7 @@
     position: relative;
     background-color: #05386b;
     color: #fff;
+    padding: 8px 12px;
   }
 
   &-selected {
@@ -38,7 +39,6 @@
   }
 
   &-dropdown {
-    padding: 8px 12px;
 
     &__list {
       position: absolute;

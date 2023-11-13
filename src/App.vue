@@ -27,7 +27,7 @@
               <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>{{ t('menu_section.items.about') }}</a>
             </li>
           </ul>
-          <div class="language-switcher display-7" @click.prevent="toggleLanguageDropdown()">
+          <div class="language-switcher display-7" ref="languageSwitcher" @click.stop="toggleLanguageDropdown()">
             <div class="language-dropdown">
               <div class="language-selected">{{ selectedLanguage }}<span class="language-selected__arrow">&#9660;</span></div>
               <div class="language-dropdown__list" :class="{ 'opened' : isDropdownOpen }">
@@ -301,7 +301,7 @@
 </template>
 
 <script setup>
-import { inject, ref, computed } from 'vue'
+import { onBeforeUnmount, onMounted, inject, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n"
 import { languages } from "@/assets/i18n"
 
@@ -332,4 +332,12 @@ const scrollToMyEl = () => {
 
 const menuActive = ref(false)
 const menuToggle = () => menuActive.value = !menuActive.value
+
+let languageSwitcher = ref(null)
+const handleClickOutside = (event) => {
+  isDropdownOpen.value = (event.target !== languageSwitcher.value && isDropdownOpen.value) ? false : isDropdownOpen.value;
+}
+
+onMounted(() => document.addEventListener('click', handleClickOutside))
+onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
 </script>

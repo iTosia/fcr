@@ -148,56 +148,6 @@
     </div>
   </section>
 
-  <section class="clients2 cid-sFAOcdRzJX" id="clients2-b">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="card col-12 col-md-6 col-lg-4">
-          <div class="card-wrapper">
-            <div class="img-wrapper">
-              <img src="@/assets/images/1.png" alt="Mobirise Website Builder">
-            </div>
-            <div class="card-box align-center">
-
-              <h5 class="card-title mbr-fonts-style mb-3 display-5">
-                <strong>Our Partner</strong>
-              </h5>
-              <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. </p>
-              <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="#" target="_blank">Learn More</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="card col-12 col-md-6 col-lg-4">
-          <div class="card-wrapper">
-            <div class="img-wrapper">
-              <img src="@/assets/images/2.png" alt="Mobirise Website Builder">
-            </div>
-            <div class="card-box align-center">
-
-              <h5 class="card-title mbr-fonts-style mb-3 display-5"><strong>Our Partner</strong></h5>
-              <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. </p>
-              <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="#" target="_blank">Learn More</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="card col-12 col-md-6 col-lg-4">
-          <div class="card-wrapper">
-            <div class="img-wrapper">
-              <img src="@/assets/images/3.png" alt="Mobirise Website Builder">
-            </div>
-            <div class="card-box align-center">
-              <h5 class="card-title mbr-fonts-style mb-3 display-5"><strong>Our Partner</strong></h5>
-              <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. </p>
-              <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="#" target="_blank">Learn More</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="contacts3 map1 cid-sFAOgbarYq" id="contacts3-c">
     <div class="container">
       <div class="mbr-section-head">

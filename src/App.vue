@@ -164,7 +164,7 @@
                 <strong>Phone</strong>
               </h6>
               <p class="mbr-text mbr-fonts-style display-7">
-                0 (800) 123 45 67
+                <a href="tel:0-800-123-4567">0 (800) 123 45 67</a>
               </p>
             </div>
           </div>

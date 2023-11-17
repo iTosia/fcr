@@ -70,6 +70,14 @@
   }
 }
 
+.vue-map-container {
+  height: 100%;
+
+  .vue-map {
+    min-height: 10rem;
+  }
+}
+
 @media (max-width: 991px) {
   .language-switcher {
     margin-top: 10px;

@@ -135,7 +135,17 @@
             <div class="text-wrapper">
               <h6 class="card-title mbr-fonts-style display-2"><strong>Трошки про Нас</strong></h6>
               <p class="mbr-text mbr-fonts-style mb-4 display-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel, pulvinar in magna. Donec lacinia in mi eget pharetra.&nbsp;<br><br>Morbi id commodo risus. Donec lobortis nisl sit amet semper pulvinar. Sed quis lectus non eros congue consectetur vehicula sed tortor. Mauris laoreet, ex non aliquam tincidunt, nulla neque viverra dui, at porta quam diam sit amet nulla. Nullam suscipit diam sagittis, tempor nisi sit amet, blandit odio.&nbsp;</p>
-              <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="#" target="_blank">Learn more</a></div>
+              <div class="icons-menu d-flex align-items-center justify-content-center justify-content-lg-start">
+                <a class="iconfont-wrapper" href="#" target="_blank">
+                  <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
+                </a>
+                <a class="iconfont-wrapper" href="#" target="_blank">
+                  <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
+                </a>
+                <a class="iconfont-wrapper" href="#" target="_blank">
+                  <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="col-12 col-lg-6">

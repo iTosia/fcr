@@ -78,6 +78,14 @@
   }
 }
 
+.socicon {
+  &-facebook,
+  &-twitter,
+  &-instagram, {
+    font-size: 1.25rem;
+  }
+}
+
 @media (max-width: 991px) {
   .language-switcher {
     margin-top: 10px;

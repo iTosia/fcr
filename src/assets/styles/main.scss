@@ -86,6 +86,18 @@
   }
 }
 
+.footer {
+  &__social-list {
+    .socicon {
+      font-size: 1.5rem;
+      color: #fff;
+      opacity: 0.5;
+    }
+  }
+}
+
+// color: #05386b;
+
 @media (max-width: 991px) {
   .language-switcher {
     margin-top: 10px;

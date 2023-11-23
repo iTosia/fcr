@@ -133,8 +133,10 @@
         <div class="row align-items-center">
           <div class="col-12 col-lg">
             <div class="text-wrapper">
-              <h6 class="card-title mbr-fonts-style display-2"><strong>Трошки про Нас</strong></h6>
-              <p class="mbr-text mbr-fonts-style mb-4 display-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel, pulvinar in magna. Donec lacinia in mi eget pharetra.&nbsp;<br><br>Morbi id commodo risus. Donec lobortis nisl sit amet semper pulvinar. Sed quis lectus non eros congue consectetur vehicula sed tortor. Mauris laoreet, ex non aliquam tincidunt, nulla neque viverra dui, at porta quam diam sit amet nulla. Nullam suscipit diam sagittis, tempor nisi sit amet, blandit odio.&nbsp;</p>
+              <h6 class="card-title mbr-fonts-style display-2"><strong>Про Нас</strong></h6>
+              <p class="mbr-text mbr-fonts-style mb-4 display-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel, pulvinar in magna. Donec lacinia in mi eget pharetra.&nbsp;<br><br>Morbi id commodo risus. Donec lobortis nisl sit amet semper pulvinar. Sed quis lectus non eros congue consectetur vehicula sed tortor. Mauris laoreet, ex non aliquam tincidunt, nulla neque viverra dui, at porta quam diam sit amet nulla. Nullam suscipit diam sagittis, tempor nisi sit amet, blandit odio.
+              </p>
               <div class="icons-menu d-flex align-items-center justify-content-center justify-content-lg-start">
                 <a class="iconfont-wrapper" href="#" target="_blank">
                   <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
@@ -214,28 +216,19 @@
             <li class="foot-menu-item mbr-fonts-style display-7">
               <a href="#" target="_blank" class="text-white">About</a>
             </li>
-            <li class="foot-menu-item mbr-fonts-style display-7">
-              <a href="#" target="_blank" class="text-white">Contacts</a>
-            </li>
           </ul>
         </div>
-        <div class="row social-row">
-          <div class="social-list align-right py-2">
-            <div class="soc-item">
-              <a href="#" target="_blank">
-                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-              </a>
-            </div>
-            <div class="soc-item">
-              <a href="#" target="_blank">
-                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-              </a>
-            </div>
-            <div class="soc-item">
-              <a href="#" target="_blank">
-                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-              </a>
-            </div>
+        <div class="footer__social-list row social-row">
+          <div class="icons-menu d-flex align-items-center justify-content-center">
+            <a class="iconfont-wrapper" href="#" target="_blank">
+              <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
+            </a>
+            <a class="iconfont-wrapper" href="#" target="_blank">
+              <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
+            </a>
+            <a class="iconfont-wrapper" href="#" target="_blank">
+              <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
+            </a>
           </div>
         </div>
       </div>

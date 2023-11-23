@@ -151,9 +151,7 @@
             </div>
           </div>
           <div class="col-12 col-lg-6">
-            <div class="image-wrapper">
-              <img src="@/assets/images/mbr-10.jpg" alt="Mobirise Website Builder">
-            </div>
+            <SliderAbout />
           </div>
         </div>
       </div>
@@ -169,7 +167,7 @@
         <div class="card col-12 col-md-6">
           <div class="card-wrapper">
             <div class="image-wrapper">
-              <span class="mbr-iconfont mobi-mbri-phone mobi-mbri" style="color: rgb(5, 56, 107); fill: rgb(5, 56, 107);"></span>
+              <span class="mbr-iconfont mobi-mbri-phone mobi-mbri"></span>
             </div>
             <div class="text-wrapper">
               <h6 class="card-title mbr-fonts-style mb-1 display-5">
@@ -182,7 +180,7 @@
           </div>
           <div class="card-wrapper">
             <div class="image-wrapper">
-              <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="color: rgb(5, 56, 107); fill: rgb(5, 56, 107);"></span>
+              <span class="mbr-iconfont mobi-mbri-letter mobi-mbri"></span>
             </div>
             <div class="text-wrapper">
               <h6 class="card-title mbr-fonts-style mb-1 display-5">
@@ -242,6 +240,7 @@ import { onBeforeUnmount, onMounted, inject, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n"
 import { languages } from "@/assets/i18n"
 import GoogleMap from "@/components/GoogleMap.vue";
+import SliderAbout from "@/components/SliderAbout.vue";
 
 const { t, locale } = useI18n({useScope: 'global'})
 

@@ -96,7 +96,14 @@
   }
 }
 
-// color: #05386b;
+.swiper {
+  &-wrapper{
+    padding-bottom: 35px;
+  }
+  &-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0px !important;
+  }
+}
 
 @media (max-width: 991px) {
   .language-switcher {

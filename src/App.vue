@@ -161,7 +161,7 @@
   <section class="contacts3 map1 cid-sFAOgbarYq" id="contacts3-c">
     <div class="container">
       <div class="mbr-section-head">
-        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Як зв'язатися</strong></h3>
+        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>{{ t('contacts.title') }}</strong></h3>
       </div>
       <div class="row justify-content-center mt-4">
         <div class="card col-12 col-md-6">
@@ -171,7 +171,7 @@
             </div>
             <div class="text-wrapper">
               <h6 class="card-title mbr-fonts-style mb-1 display-5">
-                <strong>Phone</strong>
+                <strong>{{ t('contacts.items.phone') }}</strong>
               </h6>
               <p class="mbr-text mbr-fonts-style display-7">
                 <a href="tel:0-800-123-4567">0 (800) 123 45 67</a>
@@ -184,7 +184,7 @@
             </div>
             <div class="text-wrapper">
               <h6 class="card-title mbr-fonts-style mb-1 display-5">
-                <strong>Email</strong>
+                <strong>{{ t('contacts.items.email') }}</strong>
               </h6>
               <p class="mbr-text mbr-fonts-style display-7">
                 <a href="mailto:info@site.com" class="text-primary">info@site.com</a>
@@ -206,13 +206,13 @@
         <div class="row row-links">
           <ul class="foot-menu">
             <li class="foot-menu-item mbr-fonts-style display-7">
-              <a href="#" target="_blank" class="text-white">Home</a>
+              <a href="#" target="_blank" class="text-white">{{ t('footer.menu_items.home') }}</a>
             </li>
             <li class="foot-menu-item mbr-fonts-style display-7">
-              <a href="#" target="_blank" class="text-white">Shop</a>
+              <a href="#" target="_blank" class="text-white">{{ t('footer.menu_items.shop') }}</a>
             </li>
             <li class="foot-menu-item mbr-fonts-style display-7">
-              <a href="#" target="_blank" class="text-white">About</a>
+              <a href="#" target="_blank" class="text-white">{{ t('footer.menu_items.about') }}</a>
             </li>
           </ul>
         </div>

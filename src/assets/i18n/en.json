@@ -3,7 +3,6 @@
     "title": "FCR",
     "items": {
       "home": "Home",
-      "features": "Features",
       "shop": "Shop",
       "about": "About"
     }
@@ -14,6 +13,20 @@
       "undertitle_1": "Family brand of cosmetics for hair and not only.",
       "undertitle_2": "Innovations. Environmental friendliness. Caring.",
       "button": "Shop Now"
+    }
+  },
+  "contacts": {
+    "title": "How to contact us",
+    "items": {
+      "phone": "Phone",
+      "email": "Email"
+    }
+  },
+  "footer": {
+    "menu_items": {
+      "home": "Home",
+      "shop": "Shop",
+      "about": "About"
     }
   }
 }

@@ -133,18 +133,18 @@
         <div class="row align-items-center">
           <div class="col-12 col-lg">
             <div class="text-wrapper">
-              <h6 class="card-title mbr-fonts-style display-2"><strong>Про Нас</strong></h6>
+              <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('about.title') }}</strong></h6>
               <p class="mbr-text mbr-fonts-style mb-4 display-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel, pulvinar in magna. Donec lacinia in mi eget pharetra.&nbsp;<br><br>Morbi id commodo risus. Donec lobortis nisl sit amet semper pulvinar. Sed quis lectus non eros congue consectetur vehicula sed tortor. Mauris laoreet, ex non aliquam tincidunt, nulla neque viverra dui, at porta quam diam sit amet nulla. Nullam suscipit diam sagittis, tempor nisi sit amet, blandit odio.
               </p>
               <div class="icons-menu d-flex align-items-center justify-content-center justify-content-lg-start">
-                <a class="iconfont-wrapper" href="#" target="_blank">
+                <a class="iconfont-wrapper" href="https://www.facebook.com/KuzminWorkshop" target="_blank">
                   <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
                 </a>
-                <a class="iconfont-wrapper" href="#" target="_blank">
+                <a class="iconfont-wrapper" href="https://www.twitter.com/kuzminpost/" target="_blank">
                   <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
                 </a>
-                <a class="iconfont-wrapper" href="#" target="_blank">
+                <a class="iconfont-wrapper" href="https://www.instagram.com/kuzminworkshop/" target="_blank">
                   <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
                 </a>
               </div>
@@ -174,7 +174,7 @@
                 <strong>{{ t('contacts.items.phone') }}</strong>
               </h6>
               <p class="mbr-text mbr-fonts-style display-7">
-                <a href="tel:0-800-123-4567">0 (800) 123 45 67</a>
+                <a href="tel:098-690-9580">098 690 9580</a>
               </p>
             </div>
           </div>
@@ -187,7 +187,7 @@
                 <strong>{{ t('contacts.items.email') }}</strong>
               </h6>
               <p class="mbr-text mbr-fonts-style display-7">
-                <a href="mailto:info@site.com" class="text-primary">info@site.com</a>
+                <a href="mailto:kuzminworkshop@gmail.com" class="text-primary">kuzminworkshop@gmail.com</a>
               </p>
             </div>
           </div>
@@ -218,13 +218,13 @@
         </div>
         <div class="footer__social-list row social-row">
           <div class="icons-menu d-flex align-items-center justify-content-center">
-            <a class="iconfont-wrapper" href="#" target="_blank">
+            <a class="iconfont-wrapper" href="https://www.facebook.com/KuzminWorkshop" target="_blank">
               <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
             </a>
-            <a class="iconfont-wrapper" href="#" target="_blank">
+            <a class="iconfont-wrapper" href="https://www.twitter.com/kuzminpost/" target="_blank">
               <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
             </a>
-            <a class="iconfont-wrapper" href="#" target="_blank">
+            <a class="iconfont-wrapper" href="https://www.instagram.com/kuzminworkshop/" target="_blank">
               <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
             </a>
           </div>

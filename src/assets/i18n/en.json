@@ -15,6 +15,9 @@
       "button": "Shop Now"
     }
   },
+  "about": {
+    "title": "About Us"
+  },
   "contacts": {
     "title": "How to contact us",
     "items": {

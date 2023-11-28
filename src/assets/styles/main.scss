@@ -8,12 +8,15 @@
 @import 'theme-style';
 @import 'mbr-additional';
 
+$darkblue: #05386b;
+$white: #fff;
+
 .header-logo {
   cursor: pointer;
   font-family: "SignPainter", sans-serif;
   font-size: 2rem;
   text-decoration: none;
-  color: #05386b;
+  color: $darkblue;
 }
 
 .language {
@@ -21,9 +24,9 @@
     display: inline-block;
     cursor: pointer;
     position: relative;
-    background-color: #05386b;
-    color: #fff;
-    padding: 8px 12px;
+    background-color: $darkblue;
+    color: $white;
+    padding: 8px 8px 8px 10px;
   }
 
   &-selected {
@@ -34,7 +37,7 @@
 
     &__arrow {
       font-size: 0.5rem;
-      margin-left: 4px;
+      margin-left: 6px;
     }
   }
 
@@ -53,8 +56,8 @@
     }
 
     &__item {
-      background-color: #fff;
-      color: #05386b;
+      background-color: $white;
+      color: $darkblue;
       width: 100%;
       text-align: center;
       text-transform: uppercase;
@@ -62,8 +65,8 @@
       transition: 0.1s ease-in;
 
       &:hover {
-        background-color: #05386b;
-        color: #fff;
+        background-color: $darkblue;
+        color: $white;
         transition: 0.1s ease-in;
       }
     }
@@ -90,7 +93,7 @@
   &__social-list {
     .socicon {
       font-size: 1.5rem;
-      color: #fff;
+      color: $white;
       opacity: 0.5;
     }
   }

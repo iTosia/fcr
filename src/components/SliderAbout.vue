@@ -4,11 +4,6 @@
     :space-between="20"
     :loop="true"
     :pagination="{ clickable: true }"
-    :autoplay="{
-      delay: 2000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    }"
   >
     <swiper-slide v-for="slide in swiperSlides" :key="slide.id">
       <img :src="slide.img" alt="image" />

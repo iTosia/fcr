@@ -236,7 +236,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, inject, ref, computed } from 'vue'
+import { onBeforeUnmount, onMounted, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n"
 import { languages } from "@/assets/i18n"
 import GoogleMap from "@/components/GoogleMap.vue";

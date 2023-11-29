@@ -18,7 +18,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { ref } from 'vue';
 
-import img_1 from '../assets/images/mbr-10.jpg'
+import img_1 from '../assets/images/cream150.jpeg'
 
 const swiperSlides = ref([
   {

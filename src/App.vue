@@ -257,16 +257,6 @@ const switchLang = (language) => {
 
 const selectedLanguage = computed(() => locale.value)
 
-const myEl = ref(null)
-const smoothScroll = inject('smoothScroll')
-const scrollToMyEl = () => {
-  smoothScroll({
-    scrollTo: myEl.value,
-    duration: 100,
-    offset: 0,
-  })
-}
-
 const menuActive = ref(false)
 const menuToggle = () => menuActive.value = !menuActive.value
 

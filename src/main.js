@@ -2,7 +2,7 @@ import './assets/styles/main.scss'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+// import router from './router'
 import VueSmoothScroll from 'vue3-smooth-scroll'
 
 import VueGoogleMaps from '@fawmi/vue-google-maps'
@@ -23,8 +23,8 @@ const i18n = createI18n({
 
 const app = createApp(App)
 
-app.use(router)
-app.use(VueSmoothScroll)
+// app.use(router)
+app.use(VueSmoothScroll, { duration: 100 })
 app.use(VueGoogleMaps, {
     load: {
         key: `AIzaSyBos_2qb-umr0Ea9w5VTUPkTlTnHJKvPNU`,

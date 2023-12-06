@@ -79,12 +79,12 @@
               <div class="card-box">
                 <div class="row">
                   <div class="col-md">
-                    <h6 class="card-title mbr-fonts-style display-2"><strong>Крем 150</strong></h6>
-                    <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel.<br></p>
+                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
+                    <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
                   </div>
                   <div class="col-md-auto">
-                    <p class="price mbr-fonts-style display-2">600 ₴</p>
-                    <div class="mbr-section-btn"><a href="#" target="_blank" class="btn btn-primary display-4">Купити</a></div>
+                    <p class="price mbr-fonts-style display-2">{{ t('our_products.items.card_1.price') }}</p>
+                    <div class="mbr-section-btn"><button class="btn btn-primary display-4">{{ t('our_products.items.btn.add_to_cart') }}</button></div>
                   </div>
                 </div>
               </div>
@@ -104,12 +104,12 @@
               <div class="card-box">
                 <div class="row">
                   <div class="col-md">
-                    <h6 class="card-title mbr-fonts-style display-2"><strong>Крем 150 S</strong></h6>
-                    <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel.</p>
+                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
+                    <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
                   </div>
                   <div class="col-md-auto">
-                    <p class="price mbr-fonts-style display-2">600 ₴</p>
-                    <div class="mbr-section-btn"><a href="#" target="_blank" class="btn btn-primary display-4">Купити</a></div>
+                    <p class="price mbr-fonts-style display-2">{{ t('our_products.items.card_1.price') }}</p>
+                    <div class="mbr-section-btn"><button class="btn btn-primary display-4">{{ t('our_products.items.btn.add_to_cart') }}</button></div>
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@
             <div class="text-wrapper">
               <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('about.title') }}</strong></h6>
               <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel, pulvinar in magna. Donec lacinia in mi eget pharetra.&nbsp;<br><br>Morbi id commodo risus. Donec lobortis nisl sit amet semper pulvinar. Sed quis lectus non eros congue consectetur vehicula sed tortor. Mauris laoreet, ex non aliquam tincidunt, nulla neque viverra dui, at porta quam diam sit amet nulla. Nullam suscipit diam sagittis, tempor nisi sit amet, blandit odio.
+                {{ t('about.items.text_1') }}<br><br> {{ t('about.items.text_2') }}
               </p>
               <div class="icons-menu d-flex align-items-center justify-content-center justify-content-lg-start">
                 <a class="iconfont-wrapper" href="https://www.facebook.com/KuzminWorkshop" target="_blank">

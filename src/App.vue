@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse" :class="{ 'show': menuActive }" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
             <li class="nav-item">
-              <a class="nav-link link text-primary display-7" href="#">{{ t('menu_section.items.home') }}</a>
+              <a class="nav-link link text-primary display-7" href="#home" v-smooth-scroll>{{ t('menu_section.items.home') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link text-primary display-7" href="#" target="_blank">{{ t('menu_section.items.shop') }}</a>
+              <a class="nav-link link text-primary display-7" href="#products" v-smooth-scroll>{{ t('menu_section.items.shop') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>{{ t('menu_section.items.about') }}</a>
@@ -40,8 +40,8 @@
     </nav>
   </section>
 
-  <section class="header1 cid-sFCAOqBTxa" id="header1-i">
-    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(250, 250, 250);"></div>
+  <section class="header1 cid-sFCAOqBTxa" id="home">
+    <div class="mbr-overlay"></div>
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
@@ -52,32 +52,27 @@
             <strong>{{ t('main_screen.items.undertitle_2') }}</strong>
           </p>
           <div class="mbr-section-btn mt-3">
-            <a class="btn btn-primary display-4">{{ t('main_screen.items.button') }}</a>
+            <a class="btn btn-primary display-4" href="#products" v-smooth-scroll>{{ t('main_screen.items.button') }}</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="content4 cid-sFADQQfNeA" id="content4-6">
+  <section class="features8 cid-sFADMOwrhN" id="products">
     <div class="container">
       <div class="row justify-content-center">
         <div class="title col-md-12 col-lg-10">
-          <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-1"><strong>Наші товари</strong></h3>
-          <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+          <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-1"><strong>{{ t('our_products.title') }}</strong></h3>
+          <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">{{ t('our_products.undertitle') }}</h4>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features8 cid-sFADMOwrhN" id="features9-4">
-    <div class="container">
       <div class="card">
         <div class="card-wrapper">
           <div class="row align-items-center">
             <div class="col-12 col-md-4">
               <div class="image-wrapper">
-                <img src="@/assets/images/cream150-2.jpg" alt="Mobirise Website Builder">
+                <img src="@/assets/images/cream150-2.jpg" alt="img-cream">
               </div>
             </div>
             <div class="col-12 col-md">
@@ -91,7 +86,6 @@
                     <p class="price mbr-fonts-style display-2">600 ₴</p>
                     <div class="mbr-section-btn"><a href="#" target="_blank" class="btn btn-primary display-4">Купити</a></div>
                   </div>
-                  <div></div>
                 </div>
               </div>
             </div>
@@ -103,7 +97,7 @@
           <div class="row align-items-center">
             <div class="col-12 col-md-4">
               <div class="image-wrapper">
-                <img src="@/assets/images/cream150-3.jpg" alt="Mobirise Website Builder">
+                <img src="@/assets/images/cream150-3.jpg" alt="img-cream">
               </div>
             </div>
             <div class="col-12 col-md">
@@ -117,7 +111,6 @@
                     <p class="price mbr-fonts-style display-2">600 ₴</p>
                     <div class="mbr-section-btn"><a href="#" target="_blank" class="btn btn-primary display-4">Купити</a></div>
                   </div>
-                  <div></div>
                 </div>
               </div>
             </div>
@@ -206,13 +199,13 @@
         <div class="row row-links">
           <ul class="foot-menu">
             <li class="foot-menu-item mbr-fonts-style display-7">
-              <a href="#" target="_blank" class="text-white">{{ t('footer.menu_items.home') }}</a>
+              <a href="#home" v-smooth-scroll class="text-white">{{ t('footer.menu_items.home') }}</a>
             </li>
             <li class="foot-menu-item mbr-fonts-style display-7">
-              <a href="#" target="_blank" class="text-white">{{ t('footer.menu_items.shop') }}</a>
+              <a href="#products" v-smooth-scroll class="text-white">{{ t('footer.menu_items.shop') }}</a>
             </li>
             <li class="foot-menu-item mbr-fonts-style display-7">
-              <a href="#" target="_blank" class="text-white">{{ t('footer.menu_items.about') }}</a>
+              <a href="#about" v-smooth-scroll class="text-white">{{ t('footer.menu_items.about') }}</a>
             </li>
           </ul>
         </div>

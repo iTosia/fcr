@@ -15,6 +15,10 @@
       "button": "Shop Now"
     }
   },
+  "our_products": {
+    "title": "Our products",
+    "undertitle": "Here you can view and purchase our products."
+  },
   "about": {
     "title": "About Us"
   },

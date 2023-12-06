@@ -855,15 +855,15 @@ form .btn {
 }
 
 .mbr-overlay {
-  background-color: #000;
   bottom: 0;
   left: 0;
-  opacity: 0.5;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 0;
   pointer-events: none;
+  opacity: 0.6;
+  background-color: rgb(250, 250, 250);
 }
 
 blockquote {

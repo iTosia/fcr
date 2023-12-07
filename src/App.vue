@@ -67,26 +67,27 @@
           <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5 products-undertitle">{{ t('our_products.undertitle') }}</h4>
         </div>
       </div>
-      <div class="card">
+
+      <div class="card" v-for="product in products" :key="product.id">
         <div class="card-wrapper">
           <div class="row align-items-center">
             <div class="col-12 col-md-3">
               <div class="image-wrapper">
-                <img src="@/assets/images/cream150-2.jpg" alt="img-cream">
+                <img :src="product.image" :alt="`img-` + product.id" />
               </div>
             </div>
             <div class="col-12 col-md">
               <div class="card-box">
                 <div class="row align-items-center">
                   <div class="col-md">
-                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
-                    <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
+                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ product.title }}</strong></h6>
+                    <p class="mbr-text mbr-fonts-style display-7">{{ product.short_description }}</p>
                     <div class="mbr-section-btn">
-                      <button class="btn btn-info btn-sm display-4" @click="openModal()">{{ t('our_products.items.btn.see_more') }}</button>
+                      <button class="btn btn-info btn-sm display-4" @click="openModal(product.id)">{{ t('our_products.items.btn.see_more') }}</button>
                     </div>
                   </div>
                   <div class="col-md-auto">
-                    <p class="price mbr-fonts-style display-2">{{ t('our_products.items.card_1.price') }}</p>
+                    <p class="price mbr-fonts-style display-2">{{ product.price }}</p>
                     <div class="mbr-section-btn"><button class="btn btn-primary display-4">{{ t('our_products.items.btn.add_to_cart') }}</button></div>
                   </div>
                 </div>
@@ -95,34 +96,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-wrapper">
-          <div class="row align-items-center">
-            <div class="col-12 col-md-3">
-              <div class="image-wrapper">
-                <img src="@/assets/images/cream150-3.jpg" alt="img-cream">
-              </div>
-            </div>
-            <div class="col-12 col-md">
-              <div class="card-box">
-                <div class="row align-items-center">
-                  <div class="col-md">
-                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
-                    <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
-                    <div class="mbr-section-btn">
-                      <button class="btn btn-info btn-sm display-4" @click="openModal()">{{ t('our_products.items.btn.see_more') }}</button>
-                    </div>
-                  </div>
-                  <div class="col-md-auto">
-                    <p class="price mbr-fonts-style display-2">{{ t('our_products.items.card_1.price') }}</p>
-                    <div class="mbr-section-btn"><button class="btn btn-primary display-4">{{ t('our_products.items.btn.add_to_cart') }}</button></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </section>
 
@@ -232,7 +206,12 @@
     </div>
   </section>
 
-  <ModalProduct :isOpen="isModalOpened" @modal-close="closeModal" @submit="submitHandler" name="first-modal" />
+  <ModalProduct
+      :isOpen="isModalOpened"
+      @modal-close="closeModal"
+      @submit="submitHandler"
+      :chosenProduct="chosenProduct"
+  />
 
 </template>
 
@@ -243,6 +222,9 @@ import { languages } from "@/assets/i18n"
 import GoogleMap from "@/components/GoogleMap.vue";
 import SliderAbout from "@/components/SliderAbout.vue";
 import ModalProduct from "@/components/ModalProduct.vue";
+
+import product_1 from '@/assets/images/product-1.jpg';
+import product_2 from '@/assets/images/product-2.jpg';
 
 const { t, locale } = useI18n({useScope: 'global'})
 
@@ -267,14 +249,42 @@ const handleClickOutside = (event) => {
   isDropdownOpen.value = (event.target !== languageSwitcher.value && isDropdownOpen.value) ? false : isDropdownOpen.value;
 }
 
+const chosenProduct = ref(null)
+
 const isModalOpened = ref(false);
 
-const openModal = () => isModalOpened.value = true
-const closeModal = () => isModalOpened.value = false
+const openModal = (id) => {
+  chosenProduct.value = products.value.find(item => item.id === id)
+  isModalOpened.value = true
+}
+
+const closeModal = () => {
+  isModalOpened.value = false
+  chosenProduct.value = null
+}
 
 const submitHandler = () => {
   //here you do whatever
 }
+
+const products = ref([
+  {
+    id: 1,
+    image: product_1,
+    title: t('our_products.items.card_1.title'),
+    short_description: t('our_products.items.card_1.short_description'),
+    description: t('our_products.items.card_1.description'),
+    price: t('our_products.items.card_1.price'),
+  },
+  {
+    id: 2,
+    image: product_2,
+    title: t('our_products.items.card_2.title'),
+    short_description: t('our_products.items.card_2.short_description'),
+    description: t('our_products.items.card_2.description'),
+    price: t('our_products.items.card_2.price'),
+  }
+])
 
 onMounted(() => document.addEventListener('click', handleClickOutside))
 onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))

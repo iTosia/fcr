@@ -63,8 +63,8 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="title col-md-12 col-lg-10">
-          <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-1"><strong>{{ t('our_products.title') }}</strong></h3>
-          <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">{{ t('our_products.undertitle') }}</h4>
+          <h3 class="mbr-section-title mbr-fonts-style align-center mb-3 display-1 products-title"><strong>{{ t('our_products.title') }}</strong></h3>
+          <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5 products-undertitle">{{ t('our_products.undertitle') }}</h4>
         </div>
       </div>
       <div class="card">
@@ -77,7 +77,7 @@
             </div>
             <div class="col-12 col-md">
               <div class="card-box">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col-md">
                     <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
                     <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
@@ -102,7 +102,7 @@
             </div>
             <div class="col-12 col-md">
               <div class="card-box">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col-md">
                     <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
                     <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
@@ -156,7 +156,7 @@
       <div class="mbr-section-head">
         <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>{{ t('contacts.title') }}</strong></h3>
       </div>
-      <div class="row justify-content-center mt-4">
+      <div class="row justify-content-center mt-3">
         <div class="card col-12 col-md-6">
           <div class="card-wrapper">
             <div class="image-wrapper">

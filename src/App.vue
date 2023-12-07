@@ -82,7 +82,7 @@
                     <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
                     <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
                     <div class="mbr-section-btn">
-                      <button class="btn btn-info btn-sm display-4" @click="openModal">{{ t('our_products.items.btn.see_more') }}</button>
+                      <button class="btn btn-info btn-sm display-4" @click="openModal()">{{ t('our_products.items.btn.see_more') }}</button>
                     </div>
                   </div>
                   <div class="col-md-auto">
@@ -109,6 +109,9 @@
                   <div class="col-md">
                     <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
                     <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
+                    <div class="mbr-section-btn">
+                      <button class="btn btn-info btn-sm display-4" @click="openModal()">{{ t('our_products.items.btn.see_more') }}</button>
+                    </div>
                   </div>
                   <div class="col-md-auto">
                     <p class="price mbr-fonts-style display-2">{{ t('our_products.items.card_1.price') }}</p>

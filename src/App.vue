@@ -70,7 +70,7 @@
       <div class="card">
         <div class="card-wrapper">
           <div class="row align-items-center">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-3">
               <div class="image-wrapper">
                 <img src="@/assets/images/cream150-2.jpg" alt="img-cream">
               </div>
@@ -95,7 +95,7 @@
       <div class="card">
         <div class="card-wrapper">
           <div class="row align-items-center">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-3">
               <div class="image-wrapper">
                 <img src="@/assets/images/cream150-3.jpg" alt="img-cream">
               </div>

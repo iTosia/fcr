@@ -21,17 +21,17 @@
     "items": {
       "card_1": {
         "title": "Cream 1",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa...",
         "price": "600 ₴"
-
       },
       "card_2": {
         "title": "Cream 2",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa...",
         "price": "600 ₴"
       },
       "btn": {
-        "add_to_cart": "Add to cart"
+        "add_to_cart": "Add to cart",
+        "see_more": "See more"
       }
     }
   },
@@ -54,6 +54,11 @@
       "home": "Home",
       "shop": "Shop",
       "about": "About"
+    }
+  },
+  "modal_product": {
+    "btn": {
+      "close_modal": "Close"
     }
   }
 }

@@ -81,6 +81,9 @@
                   <div class="col-md">
                     <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t('our_products.items.card_1.title') }}</strong></h6>
                     <p class="mbr-text mbr-fonts-style display-7">{{ t('our_products.items.card_1.description') }}</p>
+                    <div class="mbr-section-btn">
+                      <button class="btn btn-info btn-sm display-4" @click="openModal">{{ t('our_products.items.btn.see_more') }}</button>
+                    </div>
                   </div>
                   <div class="col-md-auto">
                     <p class="price mbr-fonts-style display-2">{{ t('our_products.items.card_1.price') }}</p>
@@ -226,6 +229,8 @@
     </div>
   </section>
 
+  <ModalProduct :isOpen="isModalOpened" @modal-close="closeModal" @submit="submitHandler" name="first-modal" />
+
 </template>
 
 <script setup>
@@ -234,6 +239,7 @@ import { useI18n } from "vue-i18n"
 import { languages } from "@/assets/i18n"
 import GoogleMap from "@/components/GoogleMap.vue";
 import SliderAbout from "@/components/SliderAbout.vue";
+import ModalProduct from "@/components/ModalProduct.vue";
 
 const { t, locale } = useI18n({useScope: 'global'})
 
@@ -256,6 +262,15 @@ const menuToggle = () => menuActive.value = !menuActive.value
 let languageSwitcher = ref(null)
 const handleClickOutside = (event) => {
   isDropdownOpen.value = (event.target !== languageSwitcher.value && isDropdownOpen.value) ? false : isDropdownOpen.value;
+}
+
+const isModalOpened = ref(false);
+
+const openModal = () => isModalOpened.value = true
+const closeModal = () => isModalOpened.value = false
+
+const submitHandler = () => {
+  //here you do whatever
 }
 
 onMounted(() => document.addEventListener('click', handleClickOutside))

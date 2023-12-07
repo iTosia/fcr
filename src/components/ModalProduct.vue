@@ -2,7 +2,7 @@
   <div v-if="isOpen" class="modal-mask">
     <div class="modal-wrapper">
       <div class="modal-container" ref="target">
-        <span class="modal-close" @click.stop="closeModal()">&times;</span>
+        <div class="modal-close" @click.stop="closeModal()"><span>&times;</span></div>
         <div class="modal-footer">
           <div class="mbr-section-btn">
             <button class="btn btn-primary display-4" @click.stop="closeModal()">{{ t('modal_product.btn.close_modal') }}</button>

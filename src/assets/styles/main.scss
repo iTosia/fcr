@@ -38,18 +38,25 @@ $white: #fff;
     position: relative;
   }
   &-close {
+    cursor: pointer;
     position: absolute;
-    top: -12px;
-    right: -12px;
+    top: -15px;
+    right: -15px;
     font-size: 1.5rem;
     border-radius: 1rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     border: 1px solid $darkblue;
     background-color: $white;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    span {
+      position: absolute;
+      top: 2px;
+      left: 9px;
+    }
   }
   &-footer {
     padding: 0;

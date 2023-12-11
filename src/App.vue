@@ -82,12 +82,15 @@
                   <div class="col-md">
                     <h6 class="card-title mbr-fonts-style display-2"><strong>{{ product.title }}</strong></h6>
                     <p class="mbr-text mbr-fonts-style display-7">{{ product.short_description }}</p>
-                    <div class="mbr-section-btn">
+                    <div class="mbr-section-btn d-flex flex-row align-items-center justify-content-between w-100">
                       <button class="btn btn-info btn-sm display-4" @click="openModal(product.id)">{{ t('our_products.items.btn.see_more') }}</button>
+                      <select class="form-select product-type-select" v-model="product.selectedType" @change="updatePrice(product)">
+                        <option v-for="type in product.types" :key="type.id" :value="type.price">{{ type.label }}</option>
+                      </select>
                     </div>
                   </div>
-                  <div class="col-md-auto">
-                    <p class="price mbr-fonts-style display-2">{{ product.price }}</p>
+                  <div class="col-md-auto d-flex flex-column align-items-end align-items-md-center">
+                    <p class="price mbr-fonts-style display-2 mb-0 mb-md-3 text-md-center">{{ product.price }}</p>
                     <div class="mbr-section-btn"><button class="btn btn-primary display-4">{{ t('our_products.items.btn.add_to_cart') }}</button></div>
                   </div>
                 </div>
@@ -209,7 +212,6 @@
   <ModalProduct
       :isOpen="isModalOpened"
       @modal-close="closeModal"
-      @submit="submitHandler"
       :chosenProduct="chosenProduct"
   />
 
@@ -263,10 +265,6 @@ const closeModal = () => {
   chosenProduct.value = null
 }
 
-const submitHandler = () => {
-  //here you do whatever
-}
-
 const products = ref([
   {
     id: 1,
@@ -274,7 +272,13 @@ const products = ref([
     title: t('our_products.items.card_1.title'),
     short_description: t('our_products.items.card_1.short_description'),
     description: t('our_products.items.card_1.description'),
-    price: t('our_products.items.card_1.price'),
+    price: null,
+    selectedType: null,
+    types: [
+      { id: 1, label: '50ml', price: "400 ₴" },
+      { id: 2, label: '100ml', price: "500 ₴" },
+      { id: 3, label: '150ml', price: "600 ₴" }
+    ]
   },
   {
     id: 2,
@@ -282,9 +286,25 @@ const products = ref([
     title: t('our_products.items.card_2.title'),
     short_description: t('our_products.items.card_2.short_description'),
     description: t('our_products.items.card_2.description'),
-    price: t('our_products.items.card_2.price'),
+    price: null,
+    selectedType: null,
+    types: [
+      { id: 1, label: '50ml', price: "400 ₴" },
+      { id: 2, label: '100ml', price: "500 ₴" },
+      { id: 3, label: '150ml', price: "600 ₴" }
+    ]
   }
 ])
+
+products.value.forEach(product => {
+  if (product.types.length > 0) {
+    let [firstType] = product.types
+    product.selectedType = firstType?.price;
+    product.price = firstType?.price;
+  }
+});
+
+const updatePrice = (product) => product.price = product.selectedType
 
 onMounted(() => document.addEventListener('click', handleClickOutside))
 onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))

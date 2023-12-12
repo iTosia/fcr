@@ -9,8 +9,7 @@
               <img :src="chosenProduct.image" :alt="`img-` + chosenProduct.id" />
             </div>
             <h3 class="modal-product-title card-title mbr-fonts-style display-2 mt-3"><strong>{{ chosenProduct.title }}</strong></h3>
-            <p class="modal-product-description mbr-text mbr-fonts-style display-7">{{ chosenProduct.description }}</p>
-            <p class="modal-product-price price mbr-fonts-style display-2 mb-0">{{ chosenProduct.price }}</p>
+            <p class="modal-product-description mbr-text mbr-fonts-style display-7 mb-0">{{ chosenProduct.description }}</p>
           </div>
           <div class="modal-footer">
             <div class="mbr-section-btn">

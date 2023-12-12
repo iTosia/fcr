@@ -32,6 +32,9 @@
       "btn": {
         "add_to_cart": "Add to cart",
         "see_more": "See more"
+      },
+      "label": {
+        "volume": "Volume:"
       }
     }
   },

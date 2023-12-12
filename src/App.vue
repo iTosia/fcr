@@ -84,9 +84,12 @@
                     <p class="mbr-text mbr-fonts-style display-7">{{ product.short_description }}</p>
                     <div class="mbr-section-btn d-flex flex-row align-items-center justify-content-between w-100">
                       <button class="btn btn-info btn-sm display-4" @click="openModal(product.id)">{{ t('our_products.items.btn.see_more') }}</button>
-                      <select class="form-select product-type-select" v-model="product.selectedType" @change="updatePrice(product)">
-                        <option v-for="type in product.types" :key="type.id" :value="type.price">{{ type.label }}</option>
-                      </select>
+                      <div class="d-flex align-items-center">
+                        <label for="product-type-selection" class="display-4 me-2">{{ t('our_products.items.label.volume') }}</label>
+                        <select name="product-type-selection" class="form-select product-type-select" v-model="product.selectedType" @change="updatePrice(product)">
+                          <option v-for="type in product.types" :key="type.id" :value="type.price">{{ type.label }}</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                   <div class="col-md-auto d-flex flex-column align-items-end align-items-md-center">

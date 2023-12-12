@@ -169,6 +169,12 @@ $white: #fff;
 .product-type-select {
   width: auto;
   font-family: sans-serif;
+  padding: 0.375rem 1.5rem 0.375rem 0.65rem;
+  background-position: right 0.25rem center;
+}
+
+.btn-see-more {
+  white-space: nowrap;
 }
 
 @media (max-width: 991px) {

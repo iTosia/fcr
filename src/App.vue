@@ -82,10 +82,12 @@
                   <div class="col-md">
                     <h6 class="card-title mbr-fonts-style display-2"><strong>{{ product.title }}</strong></h6>
                     <p class="mbr-text mbr-fonts-style display-7">{{ product.short_description }}</p>
-                    <div class="mbr-section-btn d-flex flex-row align-items-center justify-content-between w-100">
-                      <button class="btn btn-info btn-sm display-4" @click="openModal(product.id)">{{ t('our_products.items.btn.see_more') }}</button>
-                      <div class="d-flex align-items-center">
-                        <label for="product-type-selection" class="display-4 me-2">{{ t('our_products.items.label.volume') }}</label>
+                    <div class="row d-flex flex-row align-items-center justify-content-between">
+                      <div class="col">
+                        <button class="btn btn-info btn-sm display-4 btn-see-more" @click="openModal(product.id)">{{ t('our_products.items.btn.see_more') }}</button>
+                      </div>
+                      <div class="col d-flex justify-content-end align-items-center">
+                        <label for="product-type-selection" class="display-4 me-1">{{ t('our_products.items.label.volume') }}</label>
                         <select name="product-type-selection" class="form-select product-type-select" v-model="product.selectedType" @change="updatePrice(product)">
                           <option v-for="type in product.types" :key="type.id" :value="type.price">{{ type.label }}</option>
                         </select>

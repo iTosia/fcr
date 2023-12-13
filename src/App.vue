@@ -73,7 +73,7 @@
           <div class="row align-items-center">
             <div class="col-12 col-md-3">
               <div class="image-wrapper">
-                <img :src="product.image" :alt="`img-` + product.id" />
+                <img :src="`src/assets/images/${product.image}`" :alt="`img-` + product.id" />
               </div>
             </div>
             <div class="col-12 col-md">
@@ -230,9 +230,6 @@ import GoogleMap from "@/components/GoogleMap.vue";
 import SliderAbout from "@/components/SliderAbout.vue";
 import ModalProduct from "@/components/ModalProduct.vue";
 
-import product_1 from '@/assets/images/product-1.jpg';
-import product_2 from '@/assets/images/product-2.jpg';
-
 const { t, locale } = useI18n({useScope: 'global'})
 
 const languagesList = ref([...Object.keys(languages)])
@@ -273,7 +270,7 @@ const closeModal = () => {
 const products = ref([
   {
     id: 1,
-    image: product_1,
+    image: 'product-1.jpg',
     title: t('our_products.items.card_1.title'),
     short_description: t('our_products.items.card_1.short_description'),
     description: t('our_products.items.card_1.description'),
@@ -287,7 +284,7 @@ const products = ref([
   },
   {
     id: 2,
-    image: product_2,
+    image: 'product-2.jpg',
     title: t('our_products.items.card_2.title'),
     short_description: t('our_products.items.card_2.short_description'),
     description: t('our_products.items.card_2.description'),

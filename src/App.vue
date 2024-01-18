@@ -27,7 +27,7 @@
               <a class="nav-link link text-primary display-7" href="#about" v-smooth-scroll>{{ t('menu_section.items.about') }}</a>
             </li>
           </ul>
-          <div class="language-switcher display-7" ref="languageSwitcher" @click.stop="toggleLanguageDropdown()">
+          <div class="language-switcher btn btn-primary display-4" ref="languageSwitcher" @click.stop="toggleLanguageDropdown()">
             <div class="language-dropdown">
               <div class="language-selected">{{ selectedLanguage }}<span class="language-selected__arrow">&#9660;</span></div>
               <div class="language-dropdown__list" :class="{ 'opened' : isDropdownOpen }">

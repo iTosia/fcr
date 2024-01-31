@@ -8,8 +8,8 @@
             <div class="modal-product-image">
               <img :src="`${chosenProduct.image}`" :alt="`img-` + chosenProduct.id" />
             </div>
-            <h3 class="modal-product-title card-title mbr-fonts-style display-2 mt-3"><strong>{{ chosenProduct.title }}</strong></h3>
-            <p class="modal-product-description mbr-text mbr-fonts-style display-7 mb-0">{{ chosenProduct.description }}</p>
+            <h3 class="modal-product-title card-title mbr-fonts-style display-2 mt-3"><strong>{{ t(`our_products.items.card_${chosenProduct.id}.title`) }}</strong></h3>
+            <p class="modal-product-description mbr-text mbr-fonts-style display-7 mb-0">{{ t(`our_products.items.card_${chosenProduct.id}.description`) }}</p>
           </div>
           <div class="modal-footer">
             <div class="mbr-section-btn">

@@ -86,8 +86,8 @@
               <div class="card-box">
                 <div class="row align-items-center">
                   <div class="col-md">
-                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ product.title }}</strong></h6>
-                    <p class="mbr-text mbr-fonts-style display-7">{{ product.short_description }}</p>
+                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t(`our_products.items.card_${product.id}.title`) }}</strong></h6>
+                    <p class="mbr-text mbr-fonts-style display-7">{{ t(`our_products.items.card_${product.id}.short_description`) }}</p>
                     <div class="row d-flex flex-row align-items-center justify-content-between">
                       <div class="col">
                         <button class="btn btn-info btn-sm display-4 btn-see-more" @click="openModal(product.id)">{{ t('our_products.items.btn.see_more') }}</button>

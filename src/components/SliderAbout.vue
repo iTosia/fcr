@@ -6,7 +6,7 @@
     :pagination="{ clickable: true }"
   >
     <swiper-slide v-for="slide in swiperSlides" :key="slide.id">
-      <img :src="slide.img" alt="image" />
+      <img :src="`src/assets/images/product-${slide.id}.jpg`" :alt="`slider-img-` + slide.id" />
     </swiper-slide>
   </swiper>
 </template>
@@ -18,22 +18,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { ref } from 'vue';
 
-import img_1 from '../assets/images/cream150.jpeg'
-
-const swiperSlides = ref([
-  {
-    id: 1,
-    img: img_1,
-  },
-  {
-    id: 2,
-    img: img_1,
-  },
-  {
-    id: 3,
-    img: img_1,
-  },
-])
+const swiperSlides = ref([ { id: 1 }, { id: 1 }, { id: 1 } ])
 
 const modules = [ Autoplay, Pagination ];
 </script>

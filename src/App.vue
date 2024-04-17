@@ -102,7 +102,12 @@
                   </div>
                   <div class="col-md-auto d-flex flex-column align-items-end align-items-md-center">
                     <p class="price mbr-fonts-style display-2 mb-0 mb-md-3 text-md-center">{{ product.price }}</p>
-                    <div class="mbr-section-btn"><button class="btn btn-primary display-4">{{ t('our_products.items.btn.add_to_cart') }}</button></div>
+                    <div class="mbr-section-btn">
+                      <button
+                          class="btn btn-primary display-4"
+                          @click="addProduct(product)"
+                      >{{ t('our_products.items.btn.add_to_cart') }}</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -226,7 +231,7 @@
       :chosenProduct="chosenProduct"
   />
 
-  <CartComponent
+  <Cart
     :isCartOpened="isCartOpened"
     @close-cart="closeCart"
   />
@@ -240,7 +245,7 @@ import { languages } from "@/assets/i18n"
 import GoogleMap from "@/components/GoogleMap.vue";
 import SliderAbout from "@/components/SliderAbout.vue";
 import ModalProduct from "@/components/ModalProduct.vue";
-import CartComponent from "@/components/CartComponent.vue";
+import Cart from "@/components/Cart.vue";
 
 import product_1 from '@/assets/images/product-1.jpg';
 import product_2 from '@/assets/images/product-2.jpg';
@@ -267,6 +272,9 @@ let languageSwitcher = ref(null)
 const handleClickOutside = (event) => {
   isDropdownOpen.value = (event.target !== languageSwitcher.value && isDropdownOpen.value) ? false : isDropdownOpen.value;
 }
+
+onMounted(() => document.addEventListener('click', handleClickOutside))
+onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
 
 const chosenProduct = ref(null)
 
@@ -328,6 +336,5 @@ const isCartOpened = ref(false)
 const openCart = () => isCartOpened.value = !isCartOpened.value
 const closeCart = () => isCartOpened.value = false
 
-onMounted(() => document.addEventListener('click', handleClickOutside))
-onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
+const addProduct = (product) => console.log(product)
 </script>

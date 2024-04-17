@@ -4,6 +4,9 @@
       <p class="shopping-cart__name display-4">Shopping cart</p>
       <button class="close-cart" @click="closeCart()">&times;</button>
     </div>
+    <div class="shopping-cart__empty">
+      <h2>Your cart is empty</h2>
+    </div>
   </div>
 </template>
 

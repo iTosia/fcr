@@ -242,10 +242,13 @@
 import { onBeforeUnmount, onMounted, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n"
 import { languages } from "@/assets/i18n"
+import { useStore } from "@/piniaStore";
 import GoogleMap from "@/components/GoogleMap.vue";
 import SliderAbout from "@/components/SliderAbout.vue";
 import ModalProduct from "@/components/ModalProduct.vue";
 import Cart from "@/components/Cart.vue";
+
+const store = useStore();
 
 const { t, locale } = useI18n({useScope: 'global'})
 

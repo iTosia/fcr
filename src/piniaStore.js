@@ -10,7 +10,7 @@ export const useStore = defineStore("store", {
     //         this.cart.push({ id: 1 })
     //     },
     // },
-    // getters: {
-    //     totalCountCart: (state) => state?.cart.length,
-    // },
+    getters: {
+        totalCountCart: (state) => state?.cart.length,
+    },
 });

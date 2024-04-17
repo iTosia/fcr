@@ -189,6 +189,7 @@ $white: #fff;
 .cart {
   &-wrapper {
     padding: 0.3rem 0.8rem;
+    position: relative;
   }
 }
 
@@ -244,6 +245,21 @@ $white: #fff;
     margin: 0;
     padding-left: 10px;
   }
+}
+
+.total-count-cart {
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  background-color: $white;
+  color: $darkblue;
+  border-radius: 20px;
+  width: 14px;
+  height: 14px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 991px) {

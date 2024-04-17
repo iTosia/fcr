@@ -10,6 +10,7 @@
         <div class="d-flex align-items-center justify-content-center">
           <div class="btn btn-primary display-4 cart-wrapper mx-4" @click="openCart()">
             <img src="@/assets/images/cart.svg" alt="cart" />
+            <span class="total-count-cart" v-if="totalCountCart">{{ totalCountCart }}</span>
           </div>
           <button @click.prevent="menuToggle()" class="navbar-toggler" :class="{ 'collapsed': menuActive }" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -264,6 +265,7 @@ const switchLang = (language) => {
 }
 
 const selectedLanguage = computed(() => locale.value)
+const totalCountCart = computed(() => store.totalCountCart)
 
 const menuActive = ref(false)
 const menuToggle = () => menuActive.value = !menuActive.value

@@ -63,5 +63,14 @@
     "btn": {
       "close_modal": "Close"
     }
+  },
+  "cart": {
+    "title": "Shopping cart",
+    "empty_cart_info": "Your cart is empty",
+    "item": {
+      "title": "Item title:",
+      "price": "Price:",
+      "selected_label": "Selected label:"
+    }
   }
 }

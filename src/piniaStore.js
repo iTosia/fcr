@@ -5,11 +5,14 @@ export const useStore = defineStore("store", {
     state: () => ({
         cart: [],
     }),
-    // actions: {
-    //     addItemToCart() {
-    //         this.cart.push({ id: 1 })
-    //     },
-    // },
+    actions: {
+        addItemToCart(item) {
+            this.cart.push(item)
+        },
+        removeCartItem(item) {
+            this.cart = this.cart.filter(cartItem => cartItem.price !== item.price)
+        },
+    },
     getters: {
         totalCountCart: (state) => state?.cart.length,
     },

@@ -314,9 +314,9 @@ const products = ref([
     price: null,
     selectedType: null,
     types: [
-      { id: 1, label: '50ml', price: "400 ₴" },
-      { id: 2, label: '100ml', price: "500 ₴" },
-      { id: 3, label: '150ml', price: "600 ₴" }
+      { id: 1, label: '50ml', price: "700 ₴" },
+      { id: 2, label: '100ml', price: "800 ₴" },
+      { id: 3, label: '150ml', price: "900 ₴" }
     ]
   }
 ])
@@ -336,5 +336,5 @@ const isCartOpened = ref(false)
 const openCart = () => isCartOpened.value = !isCartOpened.value
 const closeCart = () => isCartOpened.value = false
 
-const addProduct = (product) => console.log(product)
+const addProduct = (product) => store.addItemToCart(product)
 </script>

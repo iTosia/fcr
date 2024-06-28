@@ -9,7 +9,7 @@
     </div>
     <div class="shopping-cart__items" v-else>
       <div class="shopping-cart-item" v-for="item in store.cart" :key="item">
-        <img class="shopping-cart-item-img" :src="`src/assets/images/product-${item.id}.jpg`" :alt="`img-` + item.id" />
+        <img class="shopping-cart-item-img" :src="item.image" :alt="`item-img-${item.id}`" />
         <div class="shopping-cart-item-info">
           <h3 class="display-4">{{ t('cart.item.title') }}&nbsp;{{ item.title }}</h3>
           <p class="display-4">{{ t('cart.item.price') }}&nbsp;{{ item.price }}</p>
@@ -34,7 +34,7 @@ const store = useStore();
 
 const { t } = useI18n({useScope: 'global'})
 
-const props = defineProps({
+defineProps({
   isCartOpened: {
     type: Boolean,
     required: true,

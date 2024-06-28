@@ -75,20 +75,20 @@
         </div>
       </div>
 
-      <div class="card" v-for="product in products" :key="product.id">
+      <div class="card" v-for="product in store.availableProducts" :key="product">
         <div class="card-wrapper">
           <div class="row align-items-center">
             <div class="col-12 col-md-3">
               <div class="image-wrapper">
-                <img :src="`src/assets/images/product-${product.id}.jpg`" :alt="`img-` + product.id" />
+                <img :src="product.image" :alt="`product-img-${product.id}`" />
               </div>
             </div>
             <div class="col-12 col-md">
               <div class="card-box">
                 <div class="row align-items-center">
                   <div class="col-md">
-                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ t(`our_products.items.card_${product.id}.title`) }}</strong></h6>
-                    <p class="mbr-text mbr-fonts-style display-7">{{ t(`our_products.items.card_${product.id}.short_description`) }}</p>
+                    <h6 class="card-title mbr-fonts-style display-2"><strong>{{ product.title }}</strong></h6>
+                    <p class="mbr-text mbr-fonts-style display-7">{{ truncateText(product.description, 50) }}</p>
                     <div class="row d-flex flex-row align-items-center justify-content-between">
                       <div class="col">
                         <button class="btn btn-info btn-sm display-4 btn-see-more" @click="openModal(product.id)">{{ t('our_products.items.btn.see_more') }}</button>
@@ -104,10 +104,9 @@
                   <div class="col-md-auto d-flex flex-column align-items-end align-items-md-center">
                     <p class="price mbr-fonts-style display-2 mb-0 mb-md-3 text-md-center">{{ product.price }}</p>
                     <div class="mbr-section-btn">
-                      <button
-                          class="btn btn-primary display-4"
-                          @click="addProduct(product)"
-                      >{{ t('our_products.items.btn.add_to_cart') }}</button>
+                      <button class="btn btn-primary display-4" @click="addProduct(product)">
+                        {{ t('our_products.items.btn.add_to_cart') }}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -227,13 +226,13 @@
   </section>
 
   <ModalProduct
-      :isOpen="isModalOpened"
+      :is-open="isModalOpened"
       @modal-close="closeModal"
-      :chosenProduct="chosenProduct"
+      :chosen-product="chosenProduct"
   />
 
   <Cart
-    :isCartOpened="isCartOpened"
+    :is-cart-opened="isCartOpened"
     @close-cart="closeCart"
   />
 
@@ -254,6 +253,12 @@ const store = useStore();
 const { t, locale } = useI18n({useScope: 'global'})
 
 const languagesList = ref([...Object.keys(languages)])
+const menuActive = ref(false)
+const chosenProduct = ref(null)
+const isModalOpened = ref(false)
+const isCartOpened = ref(false)
+const products = store.availableProducts
+let languageSwitcher = ref(null)
 let isDropdownOpen = ref(false)
 
 const toggleLanguageDropdown = () => isDropdownOpen.value = !isDropdownOpen.value
@@ -261,16 +266,12 @@ const toggleLanguageDropdown = () => isDropdownOpen.value = !isDropdownOpen.valu
 const switchLang = (language) => {
   locale.value = language
   localStorage.setItem('language', locale.value)
+  store.updateTranslations()
   isDropdownOpen.value = false
 }
 
-const selectedLanguage = computed(() => locale.value)
-const totalCountCart = computed(() => store.totalCountCart)
-
-const menuActive = ref(false)
 const menuToggle = () => menuActive.value = !menuActive.value
 
-let languageSwitcher = ref(null)
 const handleClickOutside = (event) => {
   isDropdownOpen.value = (event.target !== languageSwitcher.value && isDropdownOpen.value) ? false : isDropdownOpen.value;
 }
@@ -278,12 +279,8 @@ const handleClickOutside = (event) => {
 onMounted(() => document.addEventListener('click', handleClickOutside))
 onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
 
-const chosenProduct = ref(null)
-
-const isModalOpened = ref(false);
-
 const openModal = (id) => {
-  chosenProduct.value = products.value.find(item => item.id === id)
+  chosenProduct.value = products.find(item => item.id === id)
   isModalOpened.value = true
 }
 
@@ -292,49 +289,28 @@ const closeModal = () => {
   chosenProduct.value = null
 }
 
-const products = ref([
-  {
-    id: 1,
-    title: t('our_products.items.card_1.title'),
-    short_description: t('our_products.items.card_1.short_description'),
-    description: t('our_products.items.card_1.description'),
-    price: null,
-    selectedType: null,
-    types: [
-      { id: 1, label: '50ml', price: "400 ₴" },
-      { id: 2, label: '100ml', price: "500 ₴" },
-      { id: 3, label: '150ml', price: "600 ₴" }
-    ]
-  },
-  {
-    id: 2,
-    title: t('our_products.items.card_2.title'),
-    short_description: t('our_products.items.card_2.short_description'),
-    description: t('our_products.items.card_2.description'),
-    price: null,
-    selectedType: null,
-    types: [
-      { id: 1, label: '50ml', price: "700 ₴" },
-      { id: 2, label: '100ml', price: "800 ₴" },
-      { id: 3, label: '150ml', price: "900 ₴" }
-    ]
-  }
-])
-
-products.value.forEach(product => {
+products.forEach(product => {
   if (product.types.length > 0) {
     let [firstType] = product.types
-    product.selectedType = firstType?.price;
-    product.price = firstType?.price;
+    product.selectedType = firstType?.price
+    product.price = firstType?.price
   }
 });
 
 const updatePrice = (product) => product.price = product.selectedType
 
-const isCartOpened = ref(false)
-
 const openCart = () => isCartOpened.value = !isCartOpened.value
 const closeCart = () => isCartOpened.value = false
 
 const addProduct = (product) => store.addItemToCart(product)
+
+const truncateText = (text, maxLength) => {
+  if (text.length <= maxLength) {
+    return text
+  }
+  return `${text.substring(0, maxLength)}...`
+}
+
+const selectedLanguage = computed(() => locale.value)
+const totalCountCart = computed(() => store.totalCountCart)
 </script>

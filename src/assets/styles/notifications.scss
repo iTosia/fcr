@@ -1,0 +1,37 @@
+// vue3 notifications
+.vue-notification-template {
+  display: flex !important;
+  cursor: pointer;
+  margin: 5px 7px 7px;
+  padding: 12px 25px;
+  font-size: 12px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.notification-title {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 300 !important;
+}
+
+.notification-content {
+  margin: auto 0 auto auto;
+}
+
+.vue-notification-group {
+  z-index: 10000 !important;
+}
+
+.success {
+  background: rgb(34 197 94) !important;
+}
+
+.info {
+  background: rgb(59 130 246) !important;
+}
+
+.error {
+  background: rgb(239 68 68) !important;
+}

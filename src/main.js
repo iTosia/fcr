@@ -4,6 +4,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 // import router from './router'
 import VueSmoothScroll from 'vue3-smooth-scroll'
+import Notifications from '@kyvg/vue3-notification'
 
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 
@@ -27,5 +28,7 @@ app.use(VueGoogleMaps, {
 app.use(i18nInstance)
 
 app.use(pinia)
+
+app.use(Notifications)
 
 app.mount('#app')

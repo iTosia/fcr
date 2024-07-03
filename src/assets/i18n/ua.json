@@ -70,6 +70,10 @@
       "price": "Ціна:",
       "quantity": "Кількість:",
       "selected_label": "Вибраний тип:"
+    },
+    "notification": {
+      "added_item": "Товар додано у кошик",
+      "removed_item": "Товар видалено з кошика"
     }
   }
 }

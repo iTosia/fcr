@@ -70,6 +70,10 @@
       "price": "Price:",
       "quantity": "Quantity:",
       "selected_label": "Selected label:"
+    },
+    "notification": {
+      "added_item": "Item is added to the cart",
+      "removed_item": "Item is removed from the cart"
     }
   }
 }

@@ -30,8 +30,10 @@
 import { defineProps, defineEmits, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useStore } from "@/piniaStore";
+import { useNotification } from '@kyvg/vue3-notification'
 
-const store = useStore();
+const store = useStore()
+const notification = useNotification()
 
 const { t } = useI18n({useScope: 'global'})
 
@@ -48,6 +50,15 @@ const closeCart = () => emit('close-cart')
 
 const isCartNotEmpty = computed(() => store.totalCountCart > 0)
 
-const removeCartItem = (item) => store.removeCartItem(item)
+const removeCartItem = (item) => {
+  store.removeCartItem(item)
+
+  notification.notify({
+    title: t('cart.notification.removed_item'),
+    type: 'success',
+    speed: 1000,
+    duration: 3000,
+  })
+}
 
 </script>

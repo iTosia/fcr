@@ -236,6 +236,8 @@
     @close-cart="closeCart"
   />
 
+  <notifications position="top right" classes="my-custom-class" />
+
 </template>
 
 <script setup>
@@ -243,12 +245,14 @@ import { onBeforeUnmount, onMounted, ref, computed } from 'vue'
 import { useI18n } from "vue-i18n"
 import { languages } from "@/assets/i18n"
 import { useStore } from "@/piniaStore";
+import { useNotification } from '@kyvg/vue3-notification'
 import GoogleMap from "@/components/GoogleMap.vue";
 import SliderAbout from "@/components/SliderAbout.vue";
 import ModalProduct from "@/components/ModalProduct.vue";
 import Cart from "@/components/Cart.vue";
 
 const store = useStore();
+const notification = useNotification()
 
 const { t, locale } = useI18n({useScope: 'global'})
 
@@ -316,6 +320,13 @@ const addProduct = (product) => {
   }
 
   store.addItemToCart(item)
+
+  notification.notify({
+    title: t('cart.notification.added_item'),
+    type: 'success',
+    speed: 1000,
+    duration: 3000,
+  })
 
 }
 

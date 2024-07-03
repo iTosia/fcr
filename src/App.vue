@@ -302,7 +302,22 @@ const updatePrice = (product) => product.price = product.selectedType
 const openCart = () => isCartOpened.value = !isCartOpened.value
 const closeCart = () => isCartOpened.value = false
 
-const addProduct = (product) => store.addItemToCart(product)
+const addProduct = (product) => {
+
+  let productType = product.types.find(item => item.price === product.price)
+
+  const item = {
+    id: product.id,
+    title: product.title,
+    img: product.image,
+    price: product.price,
+    label: productType.label,
+    quantity: 1
+  }
+
+  store.addItemToCart(item)
+
+}
 
 const truncateText = (text, maxLength) => {
   if (text.length <= maxLength) {

@@ -15,9 +15,9 @@ export const useStore = defineStore("store", {
                 price: null,
                 selectedType: null,
                 types: [
-                    { id: 1, label: '50ml', price: "400 ₴" },
-                    { id: 2, label: '100ml', price: "500 ₴" },
-                    { id: 3, label: '150ml', price: "600 ₴" }
+                    { id: 1, label: '50ml', price: "400₴" },
+                    { id: 2, label: '100ml', price: "500₴" },
+                    { id: 3, label: '150ml', price: "600₴" }
                 ]
             },
             {
@@ -28,9 +28,9 @@ export const useStore = defineStore("store", {
                 price: null,
                 selectedType: null,
                 types: [
-                    { id: 1, label: '50ml', price: "700 ₴" },
-                    { id: 2, label: '100ml', price: "800 ₴" },
-                    { id: 3, label: '150ml', price: "900 ₴" }
+                    { id: 1, label: '50ml', price: "700₴" },
+                    { id: 2, label: '100ml', price: "800₴" },
+                    { id: 3, label: '150ml', price: "900₴" }
                 ]
             }
         ],
@@ -38,10 +38,24 @@ export const useStore = defineStore("store", {
     }),
     actions: {
         addItemToCart(item) {
-            this.cart.push(item)
+            const cartItem = this.cart.find(cartItem => cartItem.id === item.id && cartItem.label === item.label)
+
+            if (cartItem) {
+                cartItem.quantity += 1
+            } else {
+                this.cart.push(item)
+            }
         },
         removeCartItem(item) {
-            this.cart = this.cart.filter(cartItem => cartItem.price !== item.price)
+            const cartItem = this.cart.find(cartItem => cartItem.id === item.id && cartItem.label === item.label)
+
+            if (cartItem) {
+                if (cartItem.quantity > 1) {
+                    cartItem.quantity -= 1
+                } else {
+                    this.cart = this.cart.filter(cartItem => cartItem.id !== item.id || cartItem.label !== item.label)
+                }
+            }
         },
         updateTranslations() {
             this.availableProducts = this.availableProducts.map(product => ({
@@ -52,12 +66,11 @@ export const useStore = defineStore("store", {
 
             this.cart = this.cart.map(item => ({
                 ...item,
-                title: i18n.t(`our_products.items.card_${item.id}.title`),
-                description: i18n.t(`our_products.items.card_${item.id}.description`)
+                title: i18n.t(`our_products.items.card_${item.id}.title`)
             }))
         }
     },
     getters: {
-        totalCountCart: (state) => state?.cart.length,
+        totalCountCart: (state) => state.cart.reduce((total, item) => total + item.quantity, 0),
     },
 });

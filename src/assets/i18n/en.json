@@ -68,6 +68,7 @@
     "item": {
       "title": "Item title:",
       "price": "Price:",
+      "quantity": "Quantity:",
       "selected_label": "Selected label:"
     }
   }

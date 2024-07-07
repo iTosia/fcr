@@ -1,58 +1,48 @@
 <template>
-  <transition name="fade">
-    <div v-if="isOpen" class="modal-mask">
-      <div class="modal-wrapper">
-        <div class="modal-container" ref="modalProduct">
-          <div class="modal-close" @click.stop="closeModal()"><span>&times;</span></div>
-          <div class="modal-body">
-            <div class="modal-product-image">
-              <img :src="chosenProduct.image" :alt="`img-` + chosenProduct.id" />
-            </div>
-            <h3 class="modal-product-title card-title mbr-fonts-style display-2 mt-3"><strong>{{ chosenProduct.title }}</strong></h3>
-            <p class="modal-product-description mbr-text mbr-fonts-style display-7 mb-0">{{ chosenProduct.description }}</p>
-          </div>
-          <div class="modal-footer">
-            <div class="mbr-section-btn">
-              <button class="btn btn-primary display-4" @click.stop="closeModal()">{{ t('modal_product.btn.close_modal') }}</button>
-            </div>
-          </div>
-        </div>
+  <div class="modal-container">
+    <div class="modal-close" @click.stop="closeModal()"><span>&times;</span></div>
+    <div class="modal-body">
+      <div class="modal-product-image">
+        <img :src="image" :alt="`img-` + id" />
+      </div>
+      <h3 class="modal-product-title card-title mbr-fonts-style display-2 mt-3"><strong>{{ title }}</strong></h3>
+      <p class="modal-product-description mbr-text mbr-fonts-style display-7 mb-0">{{ description }}</p>
+    </div>
+    <div class="modal-footer">
+      <div class="mbr-section-btn">
+        <button class="btn btn-primary display-4" @click.stop="closeModal()">{{ t('modal_product.btn.close_modal') }}</button>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref } from "vue";
-import { onClickOutside } from '@vueuse/core'
+import { defineProps, defineEmits } from "vue";
 import { useI18n } from "vue-i18n"
 
 const { t } = useI18n({useScope: 'global'})
 
 defineProps({
-  isOpen: {
-    type: Boolean,
-    default: false,
+  image: {
+    type: String,
     required: true,
   },
-  chosenProduct: {
-    type: Object,
+  id: {
+    type: Number,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
   }
-});
+})
 
 const emit = defineEmits(["modal-close"]);
 
-const modalProduct = ref(null)
-onClickOutside(modalProduct, ()=> emit('modal-close'))
-
 const closeModal = () => emit('modal-close')
-</script>
 
-<style scoped>
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-</style>
+</script>

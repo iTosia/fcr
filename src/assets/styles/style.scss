@@ -382,3 +382,11 @@
     }
   }
 }
+
+.modal-enter-from, .modal-leave-to {
+  opacity: 0;
+  transform: scale(1.1);
+}
+.modal-enter-active, .modal-leave-active {
+  transition: all 0.25s ease;
+}

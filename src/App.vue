@@ -225,11 +225,20 @@
     </div>
   </section>
 
-  <ModalProduct
-      :is-open="isModalOpened"
-      @modal-close="closeModal"
-      :chosen-product="chosenProduct"
-  />
+  <Teleport to="#modal-product">
+    <Transition name="modal">
+      <div class="modal-mask" v-if="isModalOpened">
+        <ModalProduct
+          ref="modalProduct"
+          @modal-close="closeModal"
+          :image="chosenProduct.image"
+          :id="chosenProduct.id"
+          :title="chosenProduct.title"
+          :description="chosenProduct.description"
+        />
+      </div>
+    </Transition>
+  </Teleport>
 
   <Cart
     :is-cart-opened="isCartOpened"
@@ -242,6 +251,7 @@
 
 <script setup>
 import { onBeforeUnmount, onMounted, ref, computed } from 'vue'
+import { onClickOutside } from '@vueuse/core'
 import { useI18n } from "vue-i18n"
 import { languages } from "@/assets/i18n"
 import { useStore } from "@/piniaStore";
@@ -264,6 +274,9 @@ const isCartOpened = ref(false)
 const products = store.availableProducts
 let languageSwitcher = ref(null)
 let isDropdownOpen = ref(false)
+const modalProduct = ref(null)
+
+onClickOutside(modalProduct, ()=> (isModalOpened.value = false))
 
 const toggleLanguageDropdown = () => isDropdownOpen.value = !isDropdownOpen.value
 
